@@ -20,6 +20,23 @@ def start_drawing(event):
     last_x, last_y = event.x, event.y
 
 def draw(event):
-    global last_x, last_y,
+    global last_x, last_y
     if last_x is not None and last_y is not None:
         canvas.create_line(last_x, last_y, event_x, event_y, fill= current_color, width=line_width, )
+
+def stop_drawing(event):
+    global last_x, last_y
+    last_x, last_y = None, None
+
+def set_color(new_color):
+    global current_color
+    current_color = new_color
+
+def set_width(new_width):
+    global line_width
+    line_width = new_width
+
+def clear_canvas():
+    canvas. delete("all")
+
+        
